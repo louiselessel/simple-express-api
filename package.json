@@ -4,7 +4,12 @@
   "description": "A Simple express API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/louiselessel/simple-express-api.git"
   },
   "keywords": [
     "express",
