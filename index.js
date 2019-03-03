@@ -21,6 +21,9 @@ db.loadDatabase();
 // init express app
 const app = express();
 
+// Send files from the public directory
+app.use(express.static( path.resolve(__dirname, 'public') ));
+
 // Handling JSON data. Puts it in request.body
 // express, whenever a post request comes in whether from a form or via API call, handle it as json and make it easy to grab from the request
 app.use(express.json());       // to support JSON-encoded bodies
@@ -36,12 +39,15 @@ app.use(express.urlencoded({extended:true})); // to support URL-encoded bodies
     {id:6, color:"purple", x:300, y: 200}
 ];*/
 
+
+
 // SERVER SIDE STUFF ---------------------
 
 // add initial api endpoint
 // If a GET request (app.get()...) is made to your server at the baseurl, send the message:
 app.get("/", (request, response) => {
-    response.send("thank you for the request");
+    //response.send("thank you for the request");
+    response.sendFile("index.html");
 });
 
 // GET - /api
